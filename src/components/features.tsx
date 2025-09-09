@@ -1,110 +1,108 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { SVGIcon } from "@/components/ui/icon"
-
-// アイコンをインポート
-import GithubIcon from "../../icons/brands/github.svg"
-import HomeIcon from "../../icons/ui/solid/home.svg"
-import UserIcon from "../../icons/ui/solid/user.svg"
-import SettingsIcon from "../../icons/ui/solid/settings.svg"
-import DiamondIcon from "../../marks/shapes/diamond.svg"
-import LightningIcon from "../../marks/lightning.svg"
+import { Illustration } from "@/components/ui/illustration"
 
 const Features = () => {
   const features = [
     {
-      title: "Next.js 15",
-      description: "The latest React framework with App Router, Server Components, and optimized performance.",
-      icon: LightningIcon,
-      color: "warning" as const,
+      title: "Complete Development Kit",
+      description: "Everything you need to start building: Next.js 15, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.",
+      illustration: "/illustrations/coding.svg",
+      color: "blue",
     },
     {
-      title: "SVG Icon Library",
-      description: "Complete collection of brand icons, UI elements, and decorative marks with SVGR integration.",
-      icon: DiamondIcon,
-      color: "primary" as const,
+      title: "Professional Icon Library", 
+      description: "79+ carefully crafted SVG icons across 9 categories. From brands to tech devices, all optimized and ready to use.",
+      illustration: "/illustrations/mobile-app.svg",
+      color: "purple",
     },
     {
-      title: "shadcn/ui",
-      description: "Beautiful, accessible, and customizable components built on Radix UI primitives.",
-      icon: HomeIcon,
-      color: "secondary" as const,
-    },
-    {
-      title: "Framer Motion",
-      description: "Production-ready motion library for React with powerful animation capabilities.",
-      icon: SettingsIcon,
-      color: "success" as const,
-    },
-    {
-      title: "TypeScript",
-      description: "Full TypeScript support for type-safe development and better code quality.",
-      icon: UserIcon,
-      color: "error" as const,
-    },
-    {
-      title: "Brand Integration",
-      description: "Ready-to-use brand icons including GitHub, Twitter, Google and more social platforms.",
-      icon: GithubIcon,
-      color: "current" as const,
+      title: "Team-Ready Workflow",
+      description: "Built-in best practices, automated optimization, and collaborative tools for seamless team development.",
+      illustration: "/illustrations/team-work.svg", 
+      color: "green",
     },
   ]
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Everything You Need
+            Everything You Need to Succeed
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A complete starter template with modern tools and best practices 
-            to help you build exceptional web applications.
+            Professional-grade starter template with beautiful illustrations, 
+            comprehensive icon library, and cutting-edge development tools.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-24">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
+              className={`grid lg:grid-cols-2 gap-12 items-center ${
+                index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+              }`}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 border-gray-200 hover:border-gray-300 group">
-                <CardHeader>
-                  <motion.div 
-                    className="mb-4 flex justify-center"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="p-3 rounded-lg bg-gray-50 group-hover:bg-gray-100 transition-colors">
-                      <SVGIcon 
-                        component={feature.icon} 
-                        size="2xl" 
-                        color={feature.color}
-                      />
-                    </div>
-                  </motion.div>
-                  <CardTitle className="text-xl font-semibold text-gray-900 text-center">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed text-center">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+              {/* Text Content */}
+              <div className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
+                  feature.color === 'blue' ? 'bg-blue-100 text-blue-800' :
+                  feature.color === 'purple' ? 'bg-purple-100 text-purple-800' :
+                  'bg-green-100 text-green-800'
+                }`}>
+                  {feature.color === 'blue' ? '⚡ Development' :
+                   feature.color === 'purple' ? '🎨 Design Assets' :
+                   '👥 Collaboration'}
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                  {feature.title}
+                </h3>
+                
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
+                
+                <div className="flex items-center gap-4 pt-4">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-sm text-gray-500">Production Ready</span>
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm text-gray-500">Open Source</span>
+                </div>
+              </div>
+
+              {/* Illustration */}
+              <motion.div
+                className={`relative ${index % 2 === 1 ? "lg:col-start-1" : ""}`}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className={`absolute inset-0 rounded-2xl ${
+                  feature.color === 'blue' ? 'bg-blue-100' :
+                  feature.color === 'purple' ? 'bg-purple-100' :
+                  'bg-green-100'
+                } opacity-20`}></div>
+                
+                <Illustration
+                  src={feature.illustration}
+                  alt={`${feature.title} illustration`}
+                  size="3xl"
+                  className="relative z-10 mx-auto p-8"
+                />
+              </motion.div>
             </motion.div>
           ))}
         </div>

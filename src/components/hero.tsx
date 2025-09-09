@@ -2,145 +2,123 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { SVGIcon } from "@/components/ui/icon"
-
-// アイコンをインポート
-import GithubIcon from "../../icons/brands/github.svg"
-import HomeIcon from "../../icons/ui/outline/home.svg"
-import CircleIcon from "../../marks/shapes/circle.svg"
+import { Illustration } from "@/components/ui/illustration"
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-gray-100 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        
-        {/* Floating Icons */}
-        <motion.div
-          className="absolute top-20 left-20 text-gray-300"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 360, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <SVGIcon component={CircleIcon} size="2xl" />
-        </motion.div>
-        
-        <motion.div
-          className="absolute top-32 right-32 text-gray-400"
-          animate={{
-            y: [0, 15, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <SVGIcon component={HomeIcon} size="xl" />
-        </motion.div>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Content */}
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div>
+              <motion.div
+                className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                🚀 Modern Web Development
+              </motion.div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                Build Amazing
+                <br />
+                <span className="text-blue-600">Web Applications</span>
+              </h1>
+              
+              <motion.p
+                className="text-xl text-gray-600 leading-relaxed max-w-lg"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                Complete starter template with 79+ professional icons, beautiful components, 
+                and modern tools. Start building your next project in minutes.
+              </motion.p>
+            </div>
 
-        <motion.div
-          className="absolute bottom-32 right-20 text-gray-300"
-          animate={{
-            y: [0, -10, 0],
-            rotate: [0, -360, 0],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <SVGIcon component={GithubIcon} size="2xl" />
-        </motion.div>
-      </div>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Get Started
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 text-lg font-medium rounded-lg transition-all duration-300"
+              >
+                View Icons →
+              </Button>
+            </motion.div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight mb-8">
-            Design
-          </h1>
-          
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-600 mb-6 tracking-tight">
-            Template + Icons
-          </h2>
-          
-          <motion.p
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            <motion.div
+              className="flex items-center gap-6 pt-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <div className="flex items-center text-sm text-gray-500">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                79+ Icons
+              </div>
+              <div className="flex items-center text-sm text-gray-500">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+                9 Categories
+              </div>
+              <div className="flex items-center text-sm text-gray-500">
+                <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+                Ready to Use
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - Illustration */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            A complete starter template with beautiful icons and components. 
-            Built with Next.js, Tailwind CSS, shadcn/ui, SVGR, and Framer Motion.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Button
-              size="lg"
-              className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Get Started
-            </Button>
+            <Illustration
+              src="/illustrations/web-design.svg"
+              alt="Web Design Process Illustration"
+              size="4xl"
+              priority
+              className="mx-auto"
+            />
             
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 text-lg font-medium rounded-lg transition-all duration-300"
+            {/* Floating Elements */}
+            <motion.div
+              className="absolute top-10 -left-5 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              View Demo
-            </Button>
+              <span className="text-2xl">💎</span>
+            </motion.div>
+            
+            <motion.div
+              className="absolute bottom-20 -right-5 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <span className="text-lg">⚡</span>
+            </motion.div>
           </motion.div>
-
-          <motion.div
-            className="mt-16 text-sm text-gray-500"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            Trusted by developers worldwide
-          </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}

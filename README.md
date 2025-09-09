@@ -1,8 +1,8 @@
 # DesignStarter 🚀
 
-**Modern Web App Starter Template**
+**Modern Web App Starter Template with Beautiful Illustrations**
 
-A carefully crafted starter template for building exceptional web applications with the latest tools and best practices. Inspired by modern design principles and optimized for developer productivity.
+A carefully crafted starter template for building exceptional web applications with the latest tools, beautiful unDraw-style illustrations, and comprehensive icon library. Inspired by modern design principles and optimized for developer productivity.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
@@ -12,9 +12,10 @@ A carefully crafted starter template for building exceptional web applications w
 ## ✨ Features
 
 - **⚡ Next.js 15** - Latest React framework with App Router and Server Components
-- **🎨 Tailwind CSS** - Utility-first CSS framework for rapid UI development
+- **🎨 Beautiful Illustrations** - unDraw-style SVG illustrations for modern visual appeal
+- **📦 79+ Icon Library** - Comprehensive collection across 9 categories with SVGR integration
 - **🧩 shadcn/ui** - Beautiful, accessible, and customizable components
-- **✨ Framer Motion** - Production-ready motion library for smooth animations
+- **✨ Framer Motion** - Production-ready motion library with smooth animations
 - **🔧 TypeScript** - Full type safety and enhanced developer experience
 - **📱 Responsive Design** - Mobile-first approach with modern layouts
 - **🎯 SEO Optimized** - Built-in SEO best practices
@@ -26,6 +27,8 @@ A carefully crafted starter template for building exceptional web applications w
 - **Framework:** Next.js 15
 - **Styling:** Tailwind CSS v4
 - **Components:** shadcn/ui
+- **Illustrations:** unDraw-style SVG graphics
+- **Icons:** 79+ professional icons with SVGR
 - **Animations:** Framer Motion
 - **Language:** TypeScript
 - **Font:** Geist (Sans & Mono)
