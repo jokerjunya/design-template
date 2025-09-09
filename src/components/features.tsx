@@ -9,7 +9,7 @@ import GithubIcon from "../../icons/brands/github.svg"
 import HomeIcon from "../../icons/ui/solid/home.svg"
 import UserIcon from "../../icons/ui/solid/user.svg"
 import SettingsIcon from "../../icons/ui/solid/settings.svg"
-import SparkleIcon from "../../marks/sparkle.svg"
+import DiamondIcon from "../../marks/shapes/diamond.svg"
 import LightningIcon from "../../marks/lightning.svg"
 
 const Features = () => {
@@ -23,7 +23,7 @@ const Features = () => {
     {
       title: "SVG Icon Library",
       description: "Complete collection of brand icons, UI elements, and decorative marks with SVGR integration.",
-      icon: SparkleIcon,
+      icon: DiamondIcon,
       color: "primary" as const,
     },
     {

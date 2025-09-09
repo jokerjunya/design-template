@@ -7,7 +7,7 @@ import { SVGIcon } from "@/components/ui/icon"
 // アイコンをインポート
 import GithubIcon from "../../icons/brands/github.svg"
 import HomeIcon from "../../icons/ui/outline/home.svg"
-import SparkleIcon from "../../marks/sparkle.svg"
+import CircleIcon from "../../marks/shapes/circle.svg"
 
 const Hero = () => {
   return (
@@ -52,7 +52,7 @@ const Hero = () => {
             ease: "easeInOut",
           }}
         >
-          <SVGIcon component={SparkleIcon} size="2xl" />
+          <SVGIcon component={CircleIcon} size="2xl" />
         </motion.div>
         
         <motion.div
@@ -92,23 +92,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="flex justify-center items-center gap-6 mb-8">
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <SVGIcon component={SparkleIcon} size="3xl" color="warning" />
-            </motion.div>
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight">
-              Design
-            </h1>
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <SVGIcon component={SparkleIcon} size="3xl" color="primary" />
-            </motion.div>
-          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight mb-8">
+            Design
+          </h1>
           
           <h2 className="text-4xl md:text-6xl font-bold text-gray-600 mb-6 tracking-tight">
             Template + Icons

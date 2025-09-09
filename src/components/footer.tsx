@@ -7,7 +7,9 @@ import { SVGIcon } from "@/components/ui/icon"
 // アイコンをインポート
 import GithubIcon from "../../icons/brands/github.svg"
 import TwitterIcon from "../../icons/brands/twitter.svg"
-import SparkleIcon from "../../marks/sparkle.svg"
+import DiscordIcon from "../../icons/brands/discord.svg"
+import LinkedinIcon from "../../icons/brands/linkedin.svg"
+import DiamondIcon from "../../marks/shapes/diamond.svg"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -22,8 +24,8 @@ const Footer = () => {
   const socialLinks = [
     { name: "GitHub", url: "#", icon: GithubIcon },
     { name: "Twitter", url: "#", icon: TwitterIcon },
-    { name: "Discord", url: "#", icon: SparkleIcon },
-    { name: "LinkedIn", url: "#", icon: SparkleIcon },
+    { name: "Discord", url: "#", icon: DiscordIcon },
+    { name: "LinkedIn", url: "#", icon: LinkedinIcon },
   ]
 
   return (
@@ -39,7 +41,7 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <SVGIcon component={SparkleIcon} size="xl" color="warning" />
+                <SVGIcon component={DiamondIcon} size="lg" color="primary" />
                 <h3 className="text-2xl font-bold">DesignStarter</h3>
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
@@ -126,14 +128,7 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Made with 
-          <motion.div
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <SVGIcon component={SparkleIcon} size="xs" color="error" />
-          </motion.div>
-          using Next.js, Tailwind CSS, shadcn/ui, SVGR & Framer Motion
+          Made with ❤️ using Next.js, Tailwind CSS, shadcn/ui, SVGR & Framer Motion
         </motion.div>
       </div>
     </footer>
