@@ -3,26 +3,116 @@
 import { SVGIcon } from "@/components/ui/icon"
 import { useState } from "react"
 
-// SVGアイコンを動的にインポート
+// 拡張されたアイコンライブラリ - Phase 1完了版
+
+// Brand Icons (12個) - 全アイコン
 import GithubIcon from "../../../icons/brands/github.svg"
 import TwitterIcon from "../../../icons/brands/twitter.svg"
 import GoogleIcon from "../../../icons/brands/google.svg"
+import AppleIcon from "../../../icons/brands/apple.svg"
+import MicrosoftIcon from "../../../icons/brands/microsoft.svg"
+import FacebookIcon from "../../../icons/brands/facebook.svg"
+import LinkedinIcon from "../../../icons/brands/linkedin.svg"
+import InstagramIcon from "../../../icons/brands/instagram.svg"
+import YoutubeIcon from "../../../icons/brands/youtube.svg"
+import DiscordIcon from "../../../icons/brands/discord.svg"
+import SlackIcon from "../../../icons/brands/slack.svg"
+import FigmaIcon from "../../../icons/brands/figma.svg"
+
+// UI Icons - Multiple Styles
 import HomeOutlineIcon from "../../../icons/ui/outline/home.svg"
 import UserOutlineIcon from "../../../icons/ui/outline/user.svg"
 import SettingsOutlineIcon from "../../../icons/ui/outline/settings.svg"
 import HomeSolidIcon from "../../../icons/ui/solid/home.svg"
 import UserSolidIcon from "../../../icons/ui/solid/user.svg"
 import SettingsSolidIcon from "../../../icons/ui/solid/settings.svg"
+import HomeRoundedIcon from "../../../icons/ui/rounded/home.svg"
+import UserRoundedIcon from "../../../icons/ui/rounded/user.svg"
+import SettingsRoundedIcon from "../../../icons/ui/rounded/settings.svg"
+import StarRoundedIcon from "../../../icons/ui/rounded/star.svg"
+import HeartRoundedIcon from "../../../icons/ui/rounded/heart.svg"
+
+// Navigation Icons (9個) - 全アイコン
+import MenuIcon from "../../../icons/categories/navigation/menu.svg"
+import CloseIcon from "../../../icons/categories/navigation/close.svg"
+import SearchIcon from "../../../icons/categories/navigation/search.svg"
+import ArrowUpIcon from "../../../icons/categories/navigation/arrow-up.svg"
+import ArrowDownIcon from "../../../icons/categories/navigation/arrow-down.svg"
+import ChevronUpIcon from "../../../icons/categories/navigation/chevron-up.svg"
+import ChevronDownIcon from "../../../icons/categories/navigation/chevron-down.svg"
+import FilterIcon from "../../../icons/categories/navigation/filter.svg"
+import SortIcon from "../../../icons/categories/navigation/sort.svg"
+
+// Commerce Icons (8個) - 全アイコン
+import ShoppingCartIcon from "../../../icons/categories/commerce/shopping-cart.svg"
+import ShoppingBagIcon from "../../../icons/categories/commerce/shopping-bag.svg"
+import CreditCardIcon from "../../../icons/categories/commerce/credit-card.svg"
+import DeliveryIcon from "../../../icons/categories/commerce/delivery.svg"
+import TagIcon from "../../../icons/categories/commerce/tag.svg"
+import GiftIcon from "../../../icons/categories/commerce/gift.svg"
+import PercentIcon from "../../../icons/categories/commerce/percent.svg"
+import WalletIcon from "../../../icons/categories/commerce/wallet.svg"
+
+// Enhanced Marks & Patterns
 import WaveIcon from "../../../marks/wave.svg"
 import LightningIcon from "../../../marks/lightning.svg"
 import SparkleIcon from "../../../marks/sparkle.svg"
+import DotsIcon from "../../../marks/patterns/dots.svg"
+import GridIcon from "../../../marks/patterns/grid.svg"
+import CircleIcon from "../../../marks/shapes/circle.svg"
+import TriangleIcon from "../../../marks/shapes/triangle.svg"
+import DiamondIcon from "../../../marks/shapes/diamond.svg"
 
-// アイコンカテゴリの定義
+// Phase 2: Device & Tech Icons (15個)
+import SmartphoneIcon from "../../../icons/categories/device-tech/smartphone.svg"
+import LaptopIcon from "../../../icons/categories/device-tech/laptop.svg"
+import DesktopIcon from "../../../icons/categories/device-tech/desktop.svg"
+import TabletIcon from "../../../icons/categories/device-tech/tablet.svg"
+import WatchIcon from "../../../icons/categories/device-tech/watch.svg"
+import CloudIcon from "../../../icons/categories/device-tech/cloud.svg"
+import ServerIcon from "../../../icons/categories/device-tech/server.svg"
+import DatabaseIcon from "../../../icons/categories/device-tech/database.svg"
+import WifiIcon from "../../../icons/categories/device-tech/wifi.svg"
+import BluetoothIcon from "../../../icons/categories/device-tech/bluetooth.svg"
+import MonitorIcon from "../../../icons/categories/device-tech/monitor.svg"
+import TechHeadphonesIcon from "../../../icons/categories/device-tech/headphones.svg"
+import RouterIcon from "../../../icons/categories/device-tech/router.svg"
+import CpuIcon from "../../../icons/categories/device-tech/cpu.svg"
+import MemoryIcon from "../../../icons/categories/device-tech/memory.svg"
+import HardDriveIcon from "../../../icons/categories/device-tech/hard-drive.svg"
+import UsbIcon from "../../../icons/categories/device-tech/usb.svg"
+import CameraIcon from "../../../icons/categories/device-tech/camera.svg"
+import PrinterIcon from "../../../icons/categories/device-tech/printer.svg"
+
+// Phase 2: Media & Entertainment Icons (12個)
+import MusicIcon from "../../../icons/categories/media-entertainment/music.svg"
+import PlayIcon from "../../../icons/categories/media-entertainment/play.svg"
+import PauseIcon from "../../../icons/categories/media-entertainment/pause.svg"
+import StopIcon from "../../../icons/categories/media-entertainment/stop.svg"
+import VolumeHighIcon from "../../../icons/categories/media-entertainment/volume-high.svg"
+import VolumeLowIcon from "../../../icons/categories/media-entertainment/volume-low.svg"
+import VideoIcon from "../../../icons/categories/media-entertainment/video.svg"
+import FilmIcon from "../../../icons/categories/media-entertainment/film.svg"
+import MicrophoneIcon from "../../../icons/categories/media-entertainment/microphone.svg"
+import SpeakerIcon from "../../../icons/categories/media-entertainment/speaker.svg"
+import GamepadIcon from "../../../icons/categories/media-entertainment/gamepad.svg"
+import RadioIcon from "../../../icons/categories/media-entertainment/radio.svg"
+
+// アイコンカテゴリの定義 - 全アイコン表示版
 const iconCategories = {
   brands: [
     { name: "GitHub", component: GithubIcon },
     { name: "Twitter", component: TwitterIcon },
     { name: "Google", component: GoogleIcon },
+    { name: "Apple", component: AppleIcon },
+    { name: "Microsoft", component: MicrosoftIcon },
+    { name: "Facebook", component: FacebookIcon },
+    { name: "LinkedIn", component: LinkedinIcon },
+    { name: "Instagram", component: InstagramIcon },
+    { name: "YouTube", component: YoutubeIcon },
+    { name: "Discord", component: DiscordIcon },
+    { name: "Slack", component: SlackIcon },
+    { name: "Figma", component: FigmaIcon },
   ],
   "ui-outline": [
     { name: "Home", component: HomeOutlineIcon },
@@ -34,10 +124,78 @@ const iconCategories = {
     { name: "User", component: UserSolidIcon },
     { name: "Settings", component: SettingsSolidIcon },
   ],
+  "ui-rounded": [
+    { name: "Home", component: HomeRoundedIcon },
+    { name: "User", component: UserRoundedIcon },
+    { name: "Settings", component: SettingsRoundedIcon },
+    { name: "Star", component: StarRoundedIcon },
+    { name: "Heart", component: HeartRoundedIcon },
+  ],
+  navigation: [
+    { name: "Menu", component: MenuIcon },
+    { name: "Close", component: CloseIcon },
+    { name: "Search", component: SearchIcon },
+    { name: "Arrow Up", component: ArrowUpIcon },
+    { name: "Arrow Down", component: ArrowDownIcon },
+    { name: "Chevron Up", component: ChevronUpIcon },
+    { name: "Chevron Down", component: ChevronDownIcon },
+    { name: "Filter", component: FilterIcon },
+    { name: "Sort", component: SortIcon },
+  ],
+  commerce: [
+    { name: "Shopping Cart", component: ShoppingCartIcon },
+    { name: "Shopping Bag", component: ShoppingBagIcon },
+    { name: "Credit Card", component: CreditCardIcon },
+    { name: "Delivery", component: DeliveryIcon },
+    { name: "Tag", component: TagIcon },
+    { name: "Gift", component: GiftIcon },
+    { name: "Percent", component: PercentIcon },
+    { name: "Wallet", component: WalletIcon },
+  ],
+  "device-tech": [
+    { name: "Smartphone", component: SmartphoneIcon },
+    { name: "Laptop", component: LaptopIcon },
+    { name: "Desktop", component: DesktopIcon },
+    { name: "Tablet", component: TabletIcon },
+    { name: "Watch", component: WatchIcon },
+    { name: "Cloud", component: CloudIcon },
+    { name: "Server", component: ServerIcon },
+    { name: "Database", component: DatabaseIcon },
+    { name: "WiFi", component: WifiIcon },
+    { name: "Bluetooth", component: BluetoothIcon },
+    { name: "Monitor", component: MonitorIcon },
+    { name: "Headphones", component: TechHeadphonesIcon },
+    { name: "Router", component: RouterIcon },
+    { name: "CPU", component: CpuIcon },
+    { name: "Memory", component: MemoryIcon },
+    { name: "Hard Drive", component: HardDriveIcon },
+    { name: "USB", component: UsbIcon },
+    { name: "Camera", component: CameraIcon },
+    { name: "Printer", component: PrinterIcon },
+  ],
+  "media-entertainment": [
+    { name: "Music", component: MusicIcon },
+    { name: "Play", component: PlayIcon },
+    { name: "Pause", component: PauseIcon },
+    { name: "Stop", component: StopIcon },
+    { name: "Volume High", component: VolumeHighIcon },
+    { name: "Volume Low", component: VolumeLowIcon },
+    { name: "Video", component: VideoIcon },
+    { name: "Film", component: FilmIcon },
+    { name: "Microphone", component: MicrophoneIcon },
+    { name: "Speaker", component: SpeakerIcon },
+    { name: "Gamepad", component: GamepadIcon },
+    { name: "Radio", component: RadioIcon },
+  ],
   marks: [
     { name: "Wave", component: WaveIcon },
     { name: "Lightning", component: LightningIcon },
     { name: "Sparkle", component: SparkleIcon },
+    { name: "Dots", component: DotsIcon },
+    { name: "Grid", component: GridIcon },
+    { name: "Circle", component: CircleIcon },
+    { name: "Triangle", component: TriangleIcon },
+    { name: "Diamond", component: DiamondIcon },
   ],
 }
 
@@ -45,14 +203,24 @@ const categoryTitles = {
   brands: "Brand Icons",
   "ui-outline": "UI Icons (Outline)",
   "ui-solid": "UI Icons (Solid)",
-  marks: "Decoration Marks",
+  "ui-rounded": "UI Icons (Rounded)",
+  navigation: "Navigation",
+  commerce: "Commerce",
+  "device-tech": "Device & Tech",
+  "media-entertainment": "Media & Entertainment", 
+  marks: "Decorative Marks",
 }
 
 const categoryDescriptions = {
   brands: "Popular brand and service logos",
   "ui-outline": "Outline style icons for general UI use",
   "ui-solid": "Solid style icons for emphasis",
-  marks: "Decorative elements and shapes",
+  "ui-rounded": "Friendly rounded style icons",
+  navigation: "Essential navigation elements",
+  commerce: "E-commerce and shopping icons",
+  "device-tech": "Smartphones, computers, cloud & tech devices",
+  "media-entertainment": "Music, video, gaming & entertainment",
+  marks: "Decorative elements, patterns, and shapes",
 }
 
 export default function IconsPage() {
@@ -67,7 +235,8 @@ export default function IconsPage() {
             Design Assets - Icon Library
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            A comprehensive collection of SVG icons and decorative marks for your projects
+            <strong>74+ SVG icons</strong> across 9 categories - from brands to tech devices, 
+            media entertainment to decorative marks. All optimized and ready to use.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
