@@ -28,15 +28,21 @@ const Navbar = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {["Home", "Features", "About", "Contact"].map((item) => (
+              {[
+                { name: "Home", href: "#home" },
+                { name: "Features", href: "#features" },
+                { name: "Icons", href: "/icons" },
+                { name: "About", href: "#about" },
+                { name: "Contact", href: "#contact" }
+              ].map((item) => (
                 <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.name}
+                  href={item.href}
                   className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {item}
+                  {item.name}
                 </motion.a>
               ))}
             </div>
@@ -76,13 +82,19 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-          {["Home", "Features", "About", "Contact"].map((item) => (
+          {[
+            { name: "Home", href: "#home" },
+            { name: "Features", href: "#features" },
+            { name: "Icons", href: "/icons" },
+            { name: "About", href: "#about" },
+            { name: "Contact", href: "#contact" }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.name}
+              href={item.href}
               className="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium"
             >
-              {item}
+              {item.name}
             </a>
           ))}
           <Button variant="default" className="w-full mt-4 bg-gray-900 hover:bg-gray-800">
