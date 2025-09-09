@@ -12,12 +12,10 @@
   },
   "lint-staged": {
     "**/*.svg": [
-      "svgo --config svgo.config.js",
-      "git add"
+      "svgo --config svgo.config.js"
     ],
     "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "dependencies": {

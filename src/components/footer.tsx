@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
+import { SVGIcon } from "@/components/ui/icon"
+
+// アイコンをインポート
+import GithubIcon from "../../icons/brands/github.svg"
+import TwitterIcon from "../../icons/brands/twitter.svg"
+import SparkleIcon from "../../marks/sparkle.svg"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -14,10 +20,10 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: "GitHub", url: "#", icon: "📚" },
-    { name: "Twitter", url: "#", icon: "🐦" },
-    { name: "Discord", url: "#", icon: "💬" },
-    { name: "LinkedIn", url: "#", icon: "💼" },
+    { name: "GitHub", url: "#", icon: GithubIcon },
+    { name: "Twitter", url: "#", icon: TwitterIcon },
+    { name: "Discord", url: "#", icon: SparkleIcon },
+    { name: "LinkedIn", url: "#", icon: SparkleIcon },
   ]
 
   return (
@@ -32,22 +38,29 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-bold mb-4">DesignStarter</h3>
+              <div className="flex items-center gap-3 mb-4">
+                <SVGIcon component={SparkleIcon} size="xl" color="warning" />
+                <h3 className="text-2xl font-bold">DesignStarter</h3>
+              </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                A modern starter template for building exceptional web applications 
-                with Next.js, Tailwind CSS, and cutting-edge tools.
+                A modern starter template with beautiful icons for building exceptional web applications. 
+                Includes Next.js, Tailwind CSS, shadcn/ui, SVGR, and more cutting-edge tools.
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.name}
                     href={social.url}
-                    className="text-2xl hover:text-gray-300 transition-colors"
-                    whileHover={{ scale: 1.2 }}
+                    className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
+                    whileHover={{ scale: 1.1, y: -2 }}
                     transition={{ duration: 0.2 }}
                     title={social.name}
                   >
-                    {social.icon}
+                    <SVGIcon 
+                      component={social.icon} 
+                      size="lg" 
+                      className="text-gray-300 hover:text-white transition-colors"
+                    />
                   </motion.a>
                 ))}
               </div>
@@ -107,13 +120,20 @@ const Footer = () => {
         </motion.div>
 
         <motion.div
-          className="mt-8 text-center text-xs text-gray-500"
+          className="mt-8 text-center text-xs text-gray-500 flex items-center justify-center gap-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          Made with ❤️ using Next.js, Tailwind CSS, shadcn/ui & Framer Motion
+          Made with 
+          <motion.div
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <SVGIcon component={SparkleIcon} size="xs" color="error" />
+          </motion.div>
+          using Next.js, Tailwind CSS, shadcn/ui, SVGR & Framer Motion
         </motion.div>
       </div>
     </footer>

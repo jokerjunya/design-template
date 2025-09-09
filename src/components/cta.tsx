@@ -2,6 +2,11 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { SVGIcon } from "@/components/ui/icon"
+
+// アイコンをインポート
+import GithubIcon from "../../icons/brands/github.svg"
+import SparkleIcon from "../../marks/sparkle.svg"
 
 const CTA = () => {
   return (
@@ -13,9 +18,23 @@ const CTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to Start Building?
-          </h2>
+          <div className="flex justify-center items-center gap-4 mb-6">
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            >
+              <SVGIcon component={SparkleIcon} size="2xl" color="warning" />
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+              Ready to Start Building?
+            </h2>
+            <motion.div
+              animate={{ rotate: [360, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            >
+              <SVGIcon component={SparkleIcon} size="2xl" color="primary" />
+            </motion.div>
+          </div>
           
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Clone this repository and start building your next project with our 
@@ -31,8 +50,9 @@ const CTA = () => {
           >
             <Button
               size="lg"
-              className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
             >
+              <SVGIcon component={GithubIcon} size="md" />
               Clone Repository
             </Button>
             

@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { SVGIcon } from "@/components/ui/icon"
+
+// アイコンをインポート
+import GithubIcon from "../../icons/brands/github.svg"
+import HomeIcon from "../../icons/ui/outline/home.svg"
+import SparkleIcon from "../../marks/sparkle.svg"
 
 const Hero = () => {
   return (
@@ -32,6 +38,52 @@ const Hero = () => {
             ease: "linear",
           }}
         />
+        
+        {/* Floating Icons */}
+        <motion.div
+          className="absolute top-20 left-20 text-gray-300"
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 360, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <SVGIcon component={SparkleIcon} size="2xl" />
+        </motion.div>
+        
+        <motion.div
+          className="absolute top-32 right-32 text-gray-400"
+          animate={{
+            y: [0, 15, 0],
+            x: [0, 10, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <SVGIcon component={HomeIcon} size="xl" />
+        </motion.div>
+
+        <motion.div
+          className="absolute bottom-32 right-20 text-gray-300"
+          animate={{
+            y: [0, -10, 0],
+            rotate: [0, -360, 0],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <SVGIcon component={GithubIcon} size="2xl" />
+        </motion.div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -40,11 +92,27 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
-            Modern Design
-            <br />
-            <span className="text-gray-600">Made Simple</span>
-          </h1>
+          <div className="flex justify-center items-center gap-6 mb-8">
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <SVGIcon component={SparkleIcon} size="3xl" color="warning" />
+            </motion.div>
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight">
+              Design
+            </h1>
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <SVGIcon component={SparkleIcon} size="3xl" color="primary" />
+            </motion.div>
+          </div>
+          
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-600 mb-6 tracking-tight">
+            Template + Icons
+          </h2>
           
           <motion.p
             className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
@@ -52,8 +120,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Create stunning web applications with our carefully crafted starter template. 
-            Built with Next.js, Tailwind CSS, shadcn/ui, and Framer Motion.
+            A complete starter template with beautiful icons and components. 
+            Built with Next.js, Tailwind CSS, shadcn/ui, SVGR, and Framer Motion.
           </motion.p>
 
           <motion.div

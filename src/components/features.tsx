@@ -2,38 +2,53 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { SVGIcon } from "@/components/ui/icon"
+
+// アイコンをインポート
+import GithubIcon from "../../icons/brands/github.svg"
+import HomeIcon from "../../icons/ui/solid/home.svg"
+import UserIcon from "../../icons/ui/solid/user.svg"
+import SettingsIcon from "../../icons/ui/solid/settings.svg"
+import SparkleIcon from "../../marks/sparkle.svg"
+import LightningIcon from "../../marks/lightning.svg"
 
 const Features = () => {
   const features = [
     {
       title: "Next.js 15",
       description: "The latest React framework with App Router, Server Components, and optimized performance.",
-      icon: "⚡",
+      icon: LightningIcon,
+      color: "warning" as const,
     },
     {
-      title: "Tailwind CSS",
-      description: "Utility-first CSS framework for rapid UI development with modern design patterns.",
-      icon: "🎨",
+      title: "SVG Icon Library",
+      description: "Complete collection of brand icons, UI elements, and decorative marks with SVGR integration.",
+      icon: SparkleIcon,
+      color: "primary" as const,
     },
     {
       title: "shadcn/ui",
       description: "Beautiful, accessible, and customizable components built on Radix UI primitives.",
-      icon: "🧩",
+      icon: HomeIcon,
+      color: "secondary" as const,
     },
     {
       title: "Framer Motion",
       description: "Production-ready motion library for React with powerful animation capabilities.",
-      icon: "✨",
+      icon: SettingsIcon,
+      color: "success" as const,
     },
     {
       title: "TypeScript",
       description: "Full TypeScript support for type-safe development and better code quality.",
-      icon: "🔧",
+      icon: UserIcon,
+      color: "error" as const,
     },
     {
-      title: "Responsive Design",
-      description: "Mobile-first responsive design that works beautifully on all screen sizes.",
-      icon: "📱",
+      title: "Brand Integration",
+      description: "Ready-to-use brand icons including GitHub, Twitter, Google and more social platforms.",
+      icon: GithubIcon,
+      color: "current" as const,
     },
   ]
 
@@ -65,15 +80,27 @@ const Features = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-gray-200">
+              <Card className="h-full hover:shadow-lg transition-all duration-300 border-gray-200 hover:border-gray-300 group">
                 <CardHeader>
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <CardTitle className="text-xl font-semibold text-gray-900">
+                  <motion.div 
+                    className="mb-4 flex justify-center"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="p-3 rounded-lg bg-gray-50 group-hover:bg-gray-100 transition-colors">
+                      <SVGIcon 
+                        component={feature.icon} 
+                        size="2xl" 
+                        color={feature.color}
+                      />
+                    </div>
+                  </motion.div>
+                  <CardTitle className="text-xl font-semibold text-gray-900 text-center">
                     {feature.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed">
+                  <CardDescription className="text-gray-600 leading-relaxed text-center">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
