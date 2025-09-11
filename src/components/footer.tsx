@@ -1,135 +1,112 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { Separator } from "@/components/ui/separator"
-import { SVGIcon } from "@/components/ui/icon"
-
-// アイコンをインポート
-import GithubIcon from "../../icons/brands/github.svg"
-import TwitterIcon from "../../icons/brands/twitter.svg"
-import DiscordIcon from "../../icons/brands/discord.svg"
-import LinkedinIcon from "../../icons/brands/linkedin.svg"
-import DiamondIcon from "../../marks/shapes/diamond.svg"
-
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
-  const footerLinks = {
-    Product: ["Features", "Pricing", "Documentation", "Support"],
-    Company: ["About", "Blog", "Careers", "Contact"],
-    Resources: ["Community", "Help Center", "API Reference", "Changelog"],
-    Legal: ["Privacy", "Terms", "Security", "Cookies"],
-  }
-
-  const socialLinks = [
-    { name: "GitHub", url: "#", icon: GithubIcon },
-    { name: "Twitter", url: "#", icon: TwitterIcon },
-    { name: "Discord", url: "#", icon: DiscordIcon },
-    { name: "LinkedIn", url: "#", icon: LinkedinIcon },
+  const footerSections = [
+    {
+      title: "Shop and Learn",
+      links: ["Store", "Mac", "iPad", "iPhone", "Watch", "Vision", "AirPods", "TV & Home", "AirTag", "Accessories", "Gift Cards"]
+    },
+    {
+      title: "Apple Wallet",
+      links: ["Wallet", "Apple Card", "Apple Pay", "Apple Cash"]
+    },
+    {
+      title: "Account",
+      links: ["Manage Your Apple ID", "Apple Store Account", "iCloud.com"]
+    },
+    {
+      title: "Entertainment",
+      links: ["Apple One", "Apple TV+", "Apple Music", "Apple Arcade", "Apple Fitness+", "Apple News+", "Apple Podcasts", "Apple Books", "App Store"]
+    },
+    {
+      title: "Apple Store",
+      links: ["Find a Store", "Genius Bar", "Today at Apple", "Apple Camp", "Apple Store App", "Certified Refurbished", "Apple Trade In", "Financing", "Carrier Deals at Apple", "Order Status", "Shopping Help"]
+    },
+    {
+      title: "For Business",
+      links: ["Apple and Business", "Shop for Business"]
+    },
+    {
+      title: "For Education",
+      links: ["Apple and Education", "Shop for K-12", "Shop for College"]
+    },
+    {
+      title: "For Healthcare",
+      links: ["Apple in Healthcare", "Health on Apple Watch", "Health Records on iPhone"]
+    },
+    {
+      title: "For Government",
+      links: ["Shop for Government", "Shop for Veterans and Military"]
+    },
+    {
+      title: "Apple Values",
+      links: ["Accessibility", "Education", "Environment", "Inclusion and Diversity", "Privacy", "Racial Equity and Justice", "Supplier Responsibility"]
+    },
+    {
+      title: "About Apple",
+      links: ["Newsroom", "Apple Leadership", "Career Opportunities", "Investors", "Ethics & Compliance", "Events", "Contact Apple"]
+    }
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {/* Brand section */}
-          <div className="lg:col-span-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <SVGIcon component={DiamondIcon} size="lg" color="primary" />
-                <h3 className="text-2xl font-bold">DesignStarter</h3>
-              </div>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                A modern starter template with beautiful icons for building exceptional web applications. 
-                Includes Next.js, Tailwind CSS, shadcn/ui, SVGR, and more cutting-edge tools.
-              </p>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.url}
-                    className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    transition={{ duration: 0.2 }}
-                    title={social.name}
-                  >
-                    <SVGIcon 
-                      component={social.icon} 
-                      size="lg" 
-                      className="text-gray-300 hover:text-white transition-colors"
-                    />
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Links sections */}
-          {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
-            <motion.div
-              key={category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-            >
-              <h4 className="font-semibold mb-4 text-white">{category}</h4>
-              <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+    <footer className="bg-card">
+      <div className="max-w-[1024px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="py-4 text-[12px] text-muted-foreground leading-[16px]">
+          1. Trade-in values will vary based on the condition, year, and configuration of your eligible trade-in device. Not all devices are eligible for credit. You must be at least 18 years old to be eligible to trade in for credit or for an Apple Gift Card. Trade-in value may be applied toward qualifying new device purchase, or added to an Apple Gift Card. Actual value awarded is based on receipt of a qualifying device matching the description provided when estimate was made. Sales tax may be assessed on full value of a new device purchase. In-store trade-in requires presentation of a valid photo ID (local law may require saving this information). Offer may not be available in all stores, and may vary between in-store and online trade-in. Some stores may have additional requirements. Apple or its trade-in partners reserve the right to refuse or limit quantity of any trade-in transaction for any reason. For more details, see Apple&apos;s Trade In Terms and Conditions.
         </div>
 
-        <Separator className="my-8 bg-gray-800" />
-
-        <motion.div
-          className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className="mb-4 md:mb-0">
-            © {currentYear} DesignStarter. All rights reserved.
+        <div className="border-t border-border py-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {footerSections.map((section, index) => (
+              <div key={section.title} className={index === 0 ? "lg:col-span-1" : ""}>
+                <h3 className="font-semibold text-[12px] text-foreground mb-3">
+                  {section.title}
+                </h3>
+                <ul className="space-y-2">
+                  {section.links.map((link) => (
+                    <li key={link}>
+                      <a
+                        href="#"
+                        className="text-[12px] text-muted-foreground hover:underline transition-all"
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          
-          <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Contact Us
-            </a>
-          </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="mt-8 text-center text-xs text-gray-500 flex items-center justify-center gap-2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          Made with ❤️ using Next.js, Tailwind CSS, shadcn/ui, SVGR & Framer Motion
-        </motion.div>
+        <div className="border-t border-border py-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-[12px] text-muted-foreground">
+            <div className="mb-4 md:mb-0">
+              <p>More ways to shop: <a href="#" className="text-primary hover:underline">Find an Apple Store</a> or <a href="#" className="text-primary hover:underline">other retailer</a> near you. Or call 1-800-MY-APPLE.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-border py-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-[12px] text-muted-foreground">
+            <div className="mb-4 md:mb-0">
+              Copyright © {currentYear} Apple Inc. All rights reserved.
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <a href="#" className="hover:underline">Privacy Policy</a>
+              <span>|</span>
+              <a href="#" className="hover:underline">Terms of Use</a>
+              <span>|</span>
+              <a href="#" className="hover:underline">Sales and Refunds</a>
+              <span>|</span>
+              <a href="#" className="hover:underline">Legal</a>
+              <span>|</span>
+              <a href="#" className="hover:underline">Site Map</a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   )

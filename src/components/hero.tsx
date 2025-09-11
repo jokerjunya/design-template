@@ -1,145 +1,90 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Illustration } from "@/components/ui/illustration"
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Content */}
-          <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+    <section className="relative min-h-screen bg-background pt-16 flex items-center justify-center">
+      <div className="max-w-[1024px] mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <motion.div
+          className="space-y-8"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Apple.com style hero typography */}
+          <motion.h1
+            className="text-foreground"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div>
-              <motion.div
-                className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                🚀 Modern Web Development
-              </motion.div>
-              
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Build Amazing
-                <br />
-                <span className="text-blue-600">Web Applications</span>
-              </h1>
-              
-              <motion.p
-                className="text-xl text-gray-600 leading-relaxed max-w-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                Complete starter template with 79+ professional icons, beautiful components, 
-                and modern tools. Start building your next project in minutes.
-              </motion.p>
-            </div>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Get Started
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 text-lg font-medium rounded-lg transition-all duration-300"
-              >
-                View Icons →
-              </Button>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center gap-6 pt-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <div className="flex items-center text-sm text-gray-500">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                79+ Icons
-              </div>
-              <div className="flex items-center text-sm text-gray-500">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-                9 Categories
-              </div>
-              <div className="flex items-center text-sm text-gray-500">
-                <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                Ready to Use
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Column - Illustration */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
+            iPhone 16 Pro
+          </motion.h1>
+          
+          <motion.h2
+            className="text-2xl lg:text-3xl text-muted-foreground mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Illustration
-              src="/illustrations/web-design.svg"
-              alt="Web Design Process Illustration"
-              size="4xl"
-              priority
-              className="mx-auto"
-            />
-            
-            {/* Floating Elements */}
-            <motion.div
-              className="absolute top-10 -left-5 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <span className="text-2xl">💎</span>
-            </motion.div>
-            
-            <motion.div
-              className="absolute bottom-20 -right-5 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <span className="text-lg">⚡</span>
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
-      >
-        <motion.div
-          className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
+            Hello, Apple Intelligence.
+          </motion.h2>
+          
+          <motion.p
+            className="max-w-3xl mx-auto mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            Personal, private, powerful. iPhone 16 Pro with A18 Pro chip is built for Apple Intelligence, 
+            the personal intelligence system that helps you write, express yourself, and get things done effortlessly.
+          </motion.p>
+          
           <motion.div
-            className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-            animate={{ scaleY: [1, 0.5, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          />
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <a href="#" className="apple-button">
+              Learn more
+            </a>
+            <a href="#" className="apple-button-outline">
+              Buy
+            </a>
+          </motion.div>
+          
+          {/* Apple.com style availability text */}
+          <motion.p
+            className="text-[17px] text-muted-foreground mt-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          >
+            Available starting 9.20
+          </motion.p>
         </motion.div>
-      </motion.div>
+        
+        {/* Large product image area - placeholder for now */}
+        <motion.div
+          className="mt-16 lg:mt-24"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.0, delay: 0.6 }}
+        >
+          <div className="relative w-full max-w-4xl mx-auto aspect-[16/10] bg-gradient-to-br from-card to-muted/50 rounded-3xl flex items-center justify-center">
+            <div className="text-center space-y-4">
+              <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 bg-primary rounded-2xl"></div>
+              </div>
+              <p className="text-muted-foreground font-light">
+                iPhone 16 Pro Hero Image
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   )
 }

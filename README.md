@@ -1,8 +1,8 @@
-# DesignStarter 🚀
+# Apple.com Clone Template
 
-**Modern Web App Starter Template with Beautiful Illustrations**
+**Pixel-Perfect Apple.com Recreation**
 
-A carefully crafted starter template for building exceptional web applications with the latest tools, beautiful unDraw-style illustrations, and comprehensive icon library. Inspired by modern design principles and optimized for developer productivity.
+An exact recreation of Apple.com's design system and user interface, built with modern web technologies. This template copies Apple's precise typography, color palette, spacing, animations, and layout structure to provide a faithful reproduction of their exceptional design standards.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
@@ -131,15 +131,16 @@ Add more components as needed:
 npx shadcn@latest add [component-name]
 ```
 
-## 🌟 Design Philosophy
+## 🍎 Apple.com Design System
 
-This template follows modern web design principles inspired by premium websites:
+This template is a pixel-perfect recreation of Apple.com's design system:
 
-- **Minimal & Clean** - Focus on content and functionality
-- **Premium Feel** - High-quality typography and spacing
-- **Smooth Interactions** - Thoughtful animations and transitions
-- **Mobile-First** - Responsive design for all devices
-- **Accessibility** - WCAG compliant components
+- **Exact Colors** - Apple's precise color palette (#1d1d1f, #f5f5f7, #0071e3, #86868b)
+- **SF Pro Display** - Apple's official typography with exact letter-spacing and line-heights
+- **Authentic Spacing** - 1:1 recreation of Apple's spacing and layout proportions
+- **Original Components** - Navigation, hero sections, product showcases, and footer copied exactly
+- **Apple Animations** - Subtle, purposeful motion design matching Apple's standards
+- **True Mobile Experience** - Responsive design that matches Apple.com on all devices
 
 ## 📱 Responsive Breakpoints
 
