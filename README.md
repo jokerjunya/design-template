@@ -1,8 +1,8 @@
-# Apple.com Clone Template
+# 合同会社渋 公式サイト
 
-**Pixel-Perfect Apple.com Recreation**
+**日本の美意識を現代に表現するデザイン会社**
 
-An exact recreation of Apple.com's design system and user interface, built with modern web technologies. This template copies Apple's precise typography, color palette, spacing, animations, and layout structure to provide a faithful reproduction of their exceptional design standards.
+合同会社渋の公式ウェブサイト。日本の美意識「渋さ」を現代に表現するデザイン会社として、ミニマリズムと機能美を追求したデザインサービスを提供しています。Apple.comのデザインシステムを基盤に、日本らしい美しさを表現しています。
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)
@@ -131,16 +131,25 @@ Add more components as needed:
 npx shadcn@latest add [component-name]
 ```
 
-## 🍎 Apple.com Design System
+## 🎨 合同会社渋のデザイン哲学
 
-This template is a pixel-perfect recreation of Apple.com's design system:
+日本の美意識「渋さ」を現代のウェブデザインに表現：
 
-- **Exact Colors** - Apple's precise color palette (#1d1d1f, #f5f5f7, #0071e3, #86868b)
-- **SF Pro Display** - Apple's official typography with exact letter-spacing and line-heights
-- **Authentic Spacing** - 1:1 recreation of Apple's spacing and layout proportions
-- **Original Components** - Navigation, hero sections, product showcases, and footer copied exactly
-- **Apple Animations** - Subtle, purposeful motion design matching Apple's standards
-- **True Mobile Experience** - Responsive design that matches Apple.com on all devices
+- **控えめな美しさ** - 目立ちすぎず、しかし印象に残る洗練されたデザイン
+- **機能美** - 美しさと使いやすさを両立したユーザーエクスペリエンス
+- **ミニマリズム** - 無駄を削ぎ落とした本質的なデザイン
+- **精密な技術** - Apple.comレベルの技術的完成度
+- **日本らしさ** - 伝統的な美意識を現代的に解釈したブランディング
+- **持続可能性** - 長く愛されるデザインの追求
+
+## 🏢 会社概要
+
+**合同会社渋** は東京・渋谷を拠点とするデザイン会社です。
+
+### サービス内容
+- **ブランドデザイン** - ロゴ、アイデンティティ、ブランド戦略
+- **ウェブデザイン** - ウェブサイト、アプリケーション、UI/UX
+- **デザインコンサルティング** - 戦略立案、デザイン監修、ワークショップ
 
 ## 📱 Responsive Breakpoints
 

@@ -3,43 +3,43 @@
 import { motion } from "framer-motion"
 import { Illustration } from "@/components/ui/illustration"
 
-// Apple.com style product showcase component
+// 合同会社渋のサービス紹介コンポーネント
 const ProductShowcase = () => {
-  const products = [
+  const services = [
     {
-      title: "iPhone 16 Pro",
-      subtitle: "Titanium. So strong. So light. So Pro.",
-      description: "Built with Grade 5 titanium and powered by A18 Pro chip for incredible performance.",
-      image: "/illustrations/mobile-app.svg",
-      buttonText: "Learn more",
-      buttonLink: "#",
-      color: "natural"
-    },
-    {
-      title: "MacBook Pro",
-      subtitle: "Mind-blowing. Head-turning.",
-      description: "Supercharged by M3 Pro and M3 Max chips for unprecedented power and battery life.",
-      image: "/illustrations/coding.svg", 
-      buttonText: "Learn more",
-      buttonLink: "#",
-      color: "space-black"
-    },
-    {
-      title: "Apple Vision Pro",
-      subtitle: "Welcome to the era of spatial computing.",
-      description: "An infinite canvas for apps that scale beyond the boundaries of a traditional display.",
+      title: "ブランドデザイン",
+      subtitle: "本質を見つめ、美しく表現する。",
+      description: "企業やプロダクトの本質を深く理解し、日本の美意識を現代に活かしたブランドアイデンティティを構築します。ロゴから体験まで、一貫した世界観を創造します。",
       image: "/illustrations/design-process.svg",
-      buttonText: "Learn more", 
-      buttonLink: "#",
-      color: "silver"
+      buttonText: "詳しく見る",
+      buttonLink: "#branding",
+      color: "primary"
+    },
+    {
+      title: "ウェブデザイン",
+      subtitle: "使いやすさと美しさの調和。",
+      description: "ユーザビリティとエステティクスを両立したウェブサイト・アプリケーションをデザインします。シンプルな操作性の中に、深い思考と配慮を込めます。",
+      image: "/illustrations/web-design.svg", 
+      buttonText: "詳しく見る",
+      buttonLink: "#web",
+      color: "secondary"
+    },
+    {
+      title: "デザインコンサルティング",
+      subtitle: "戦略とクリエイティブの融合。",
+      description: "ビジネス戦略とデザイン思考を融合させ、企業の課題解決と成長を支援します。表面的な装飾ではなく、本質的な価値を創造するデザインを提案します。",
+      image: "/illustrations/team-work.svg",
+      buttonText: "詳しく見る", 
+      buttonLink: "#consulting",
+      color: "tertiary"
     }
   ]
 
   return (
     <section className="py-0 bg-background">
-      {products.map((product, index) => (
+      {services.map((service, index) => (
         <motion.div
-          key={product.title}
+          key={service.title}
           className="relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -55,7 +55,7 @@ const ProductShowcase = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                {product.title}
+                {service.title}
               </motion.h2>
               
               <motion.h3
@@ -65,17 +65,17 @@ const ProductShowcase = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                {product.subtitle}
+                {service.subtitle}
               </motion.h3>
               
               <motion.p
-                className="mb-8 max-w-2xl mx-auto"
+                className="mb-8 max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                {product.description}
+                {service.description}
               </motion.p>
               
               <motion.div
@@ -85,11 +85,11 @@ const ProductShowcase = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <a href={product.buttonLink} className="apple-button">
-                  {product.buttonText}
+                <a href={service.buttonLink} className="apple-button">
+                  {service.buttonText}
                 </a>
-                <a href={product.buttonLink} className="apple-button-outline">
-                  Buy
+                <a href="/contact" className="apple-button-outline">
+                  お問い合わせ
                 </a>
               </motion.div>
             </div>
@@ -102,8 +102,8 @@ const ProductShowcase = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Illustration
-                src={product.image}
-                alt={product.title}
+                src={service.image}
+                alt={service.title}
                 size="4xl"
                 className="mx-auto"
               />

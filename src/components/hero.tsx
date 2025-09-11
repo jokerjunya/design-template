@@ -12,14 +12,14 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Apple.com style hero typography */}
+          {/* 合同会社渋 hero typography */}
           <motion.h1
             className="text-foreground"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            iPhone 16 Pro
+            渋
           </motion.h1>
           
           <motion.h2
@@ -28,7 +28,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Hello, Apple Intelligence.
+            美しさは、控えめに宿る。
           </motion.h2>
           
           <motion.p
@@ -37,8 +37,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Personal, private, powerful. iPhone 16 Pro with A18 Pro chip is built for Apple Intelligence, 
-            the personal intelligence system that helps you write, express yourself, and get things done effortlessly.
+            日本の美意識「渋さ」を現代に表現する合同会社渋。
+            ミニマルで機能的なデザインを通じて、本質的な美しさを追求し、
+            クライアントの価値を静かに、しかし確実に引き出します。
           </motion.p>
           
           <motion.div
@@ -47,22 +48,22 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <a href="#" className="apple-button">
-              Learn more
+            <a href="#services" className="apple-button">
+              サービスを見る
             </a>
-            <a href="#" className="apple-button-outline">
-              Buy
+            <a href="#contact" className="apple-button-outline">
+              お問い合わせ
             </a>
           </motion.div>
           
-          {/* Apple.com style availability text */}
+          {/* 設立年 */}
           <motion.p
             className="text-[17px] text-muted-foreground mt-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            Available starting 9.20
+            設立 2024年
           </motion.p>
         </motion.div>
         
@@ -75,11 +76,11 @@ const Hero = () => {
         >
           <div className="relative w-full max-w-4xl mx-auto aspect-[16/10] bg-gradient-to-br from-card to-muted/50 rounded-3xl flex items-center justify-center">
             <div className="text-center space-y-4">
-              <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                <div className="w-16 h-16 bg-primary rounded-2xl"></div>
+              <div className="w-32 h-32 bg-primary/5 rounded-full flex items-center justify-center mx-auto">
+                <div className="text-4xl font-bold text-primary">渋</div>
               </div>
               <p className="text-muted-foreground font-light">
-                iPhone 16 Pro Hero Image
+                Simple. Functional. Beautiful.
               </p>
             </div>
           </div>

@@ -5,71 +5,44 @@ const Footer = () => {
 
   const footerSections = [
     {
-      title: "Shop and Learn",
-      links: ["Store", "Mac", "iPad", "iPhone", "Watch", "Vision", "AirPods", "TV & Home", "AirTag", "Accessories", "Gift Cards"]
+      title: "サービス",
+      links: ["ブランドデザイン", "ウェブデザイン", "デザインコンサルティング", "ロゴ制作", "パッケージデザイン"]
     },
     {
-      title: "Apple Wallet",
-      links: ["Wallet", "Apple Card", "Apple Pay", "Apple Cash"]
+      title: "実績",
+      links: ["ブランディング事例", "ウェブサイト事例", "コンサルティング事例", "受賞歴"]
     },
     {
-      title: "Account",
-      links: ["Manage Your Apple ID", "Apple Store Account", "iCloud.com"]
+      title: "会社情報",
+      links: ["会社概要", "代表挨拶", "沿革", "アクセス"]
     },
     {
-      title: "Entertainment",
-      links: ["Apple One", "Apple TV+", "Apple Music", "Apple Arcade", "Apple Fitness+", "Apple News+", "Apple Podcasts", "Apple Books", "App Store"]
+      title: "採用情報",
+      links: ["採用について", "デザイナー募集", "インターン募集", "働く環境"]
     },
     {
-      title: "Apple Store",
-      links: ["Find a Store", "Genius Bar", "Today at Apple", "Apple Camp", "Apple Store App", "Certified Refurbished", "Apple Trade In", "Financing", "Carrier Deals at Apple", "Order Status", "Shopping Help"]
-    },
-    {
-      title: "For Business",
-      links: ["Apple and Business", "Shop for Business"]
-    },
-    {
-      title: "For Education",
-      links: ["Apple and Education", "Shop for K-12", "Shop for College"]
-    },
-    {
-      title: "For Healthcare",
-      links: ["Apple in Healthcare", "Health on Apple Watch", "Health Records on iPhone"]
-    },
-    {
-      title: "For Government",
-      links: ["Shop for Government", "Shop for Veterans and Military"]
-    },
-    {
-      title: "Apple Values",
-      links: ["Accessibility", "Education", "Environment", "Inclusion and Diversity", "Privacy", "Racial Equity and Justice", "Supplier Responsibility"]
-    },
-    {
-      title: "About Apple",
-      links: ["Newsroom", "Apple Leadership", "Career Opportunities", "Investors", "Ethics & Compliance", "Events", "Contact Apple"]
+      title: "お問い合わせ",
+      links: ["プロジェクトのご相談", "お見積もり", "メディア掲載について", "講演・セミナー"]
     }
   ]
 
   return (
-    <footer className="bg-card">
+    <footer className="bg-card border-t border-border">
       <div className="max-w-[1024px] mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="py-4 text-[12px] text-muted-foreground leading-[16px]">
-          1. Trade-in values will vary based on the condition, year, and configuration of your eligible trade-in device. Not all devices are eligible for credit. You must be at least 18 years old to be eligible to trade in for credit or for an Apple Gift Card. Trade-in value may be applied toward qualifying new device purchase, or added to an Apple Gift Card. Actual value awarded is based on receipt of a qualifying device matching the description provided when estimate was made. Sales tax may be assessed on full value of a new device purchase. In-store trade-in requires presentation of a valid photo ID (local law may require saving this information). Offer may not be available in all stores, and may vary between in-store and online trade-in. Some stores may have additional requirements. Apple or its trade-in partners reserve the right to refuse or limit quantity of any trade-in transaction for any reason. For more details, see Apple&apos;s Trade In Terms and Conditions.
-        </div>
-
-        <div className="border-t border-border py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        
+        <div className="py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {footerSections.map((section, index) => (
-              <div key={section.title} className={index === 0 ? "lg:col-span-1" : ""}>
-                <h3 className="font-semibold text-[12px] text-foreground mb-3">
+              <div key={section.title}>
+                <h3 className="font-semibold text-[14px] text-foreground mb-4">
                   {section.title}
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {section.links.map((link) => (
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-[12px] text-muted-foreground hover:underline transition-all"
+                        className="text-[14px] text-muted-foreground hover:text-foreground transition-colors"
                       >
                         {link}
                       </a>
@@ -81,29 +54,43 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border py-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-[12px] text-muted-foreground">
-            <div className="mb-4 md:mb-0">
-              <p>More ways to shop: <a href="#" className="text-primary hover:underline">Find an Apple Store</a> or <a href="#" className="text-primary hover:underline">other retailer</a> near you. Or call 1-800-MY-APPLE.</p>
+        <div className="border-t border-border py-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-bold text-xl text-foreground mb-4">合同会社渋</h4>
+              <p className="text-[14px] text-muted-foreground mb-4 leading-relaxed">
+                〒150-0001 東京都渋谷区神宮前6-23-4<br />
+                桑野ビル2階<br />
+                TEL: 03-1234-5678<br />
+                Email: hello@shibu.design
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-[14px] text-foreground mb-4">お問い合わせ</h4>
+              <p className="text-[14px] text-muted-foreground mb-4 leading-relaxed">
+                プロジェクトのご相談はお気軽にお問い合わせください。<br />
+                初回相談は無料で承っております。
+              </p>
+              <a href="/contact" className="apple-button text-[14px] px-6 py-2">
+                お問い合わせ
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-border py-4">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center text-[12px] text-muted-foreground">
+        <div className="border-t border-border py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center text-[12px] text-muted-foreground">
             <div className="mb-4 md:mb-0">
-              Copyright © {currentYear} Apple Inc. All rights reserved.
+              Copyright © {currentYear} 合同会社渋. All rights reserved.
             </div>
             <div className="flex flex-wrap gap-4">
-              <a href="#" className="hover:underline">Privacy Policy</a>
+              <a href="#" className="hover:underline">プライバシーポリシー</a>
               <span>|</span>
-              <a href="#" className="hover:underline">Terms of Use</a>
+              <a href="#" className="hover:underline">利用規約</a>
               <span>|</span>
-              <a href="#" className="hover:underline">Sales and Refunds</a>
+              <a href="#" className="hover:underline">特定商取引法</a>
               <span>|</span>
-              <a href="#" className="hover:underline">Legal</a>
-              <span>|</span>
-              <a href="#" className="hover:underline">Site Map</a>
+              <a href="#" className="hover:underline">サイトマップ</a>
             </div>
           </div>
         </div>

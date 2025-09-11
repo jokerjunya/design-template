@@ -7,17 +7,16 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   
   const navItems = [
-    { name: "Store", href: "/store" },
-    { name: "Mac", href: "/mac" },
-    { name: "iPad", href: "/ipad" },
-    { name: "iPhone", href: "/iphone" },
-    { name: "Watch", href: "/watch" },
-    { name: "Vision", href: "/vision" },
-    { name: "AirPods", href: "/airpods" },
-    { name: "TV & Home", href: "/tv-home" },
-    { name: "Entertainment", href: "/entertainment" },
-    { name: "Accessories", href: "/accessories" },
-    { name: "Support", href: "/support" },
+    { name: "ホーム", href: "/" },
+    { name: "サービス", href: "/services" },
+    { name: "デザイン", href: "/design" },
+    { name: "ブランディング", href: "/branding" },
+    { name: "ウェブ制作", href: "/web" },
+    { name: "コンサルティング", href: "/consulting" },
+    { name: "実績", href: "/works" },
+    { name: "会社概要", href: "/about" },
+    { name: "採用", href: "/careers" },
+    { name: "お問い合わせ", href: "/contact" },
   ]
 
   return (
@@ -27,9 +26,7 @@ const Navbar = () => {
           {/* Apple Logo */}
           <div className="flex items-center">
             <Link href="/" className="text-foreground p-2 hover:text-muted-foreground transition-colors">
-              <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor">
-                <path d="M8.02 0C7.27.02 5.84.28 4.9 1.38c-.85 1.01-1.18 2.39-.98 3.74 1.3.07 2.68-.68 3.52-1.69C8.28 2.42 8.53 1.04 8.02 0zM13.65 5.5c-1.53-1.96-3.87-3.12-6.33-3.12C5.46 2.38 3.86 3.1 2.95 3.1c-.9 0-2.26-.68-3.71-.68C-1.64 2.42-2.42 3.6-1.92 5.64c.5 2.04 1.9 5.16 3.44 6.84 1.07 1.17 2.06 1.57 2.96 1.57.9 0 1.3-.6 2.75-.6s1.85.6 2.75.6c.9 0 1.89-.4 2.96-1.57 1.54-1.68 2.94-4.8 3.44-6.84C16.87 3.6 16.09 2.42 13.65 5.5z"/>
-              </svg>
+              <div className="text-lg font-bold">渋</div>
             </Link>
           </div>
 
